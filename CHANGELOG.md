@@ -2,6 +2,49 @@
 
 The AWS AppSync SDK for iOS enables you to access your AWS AppSync backend and perform operations like `Queries`, `Mutations` and `Subscriptions`. The SDK also includes support for offline operations.
 
+## 2.8.0
+
+### Misc. Updates
+
+* Use Swift 4.2's `Float.random(in:)` instead of `arc4random()` to generate request retry jitter. [See PR #108](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/108). Thanks @larryonoff! 🎉
+* Added SwiftLint to project. [See PR #121](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/121) and [issue #107](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/107). Thanks @larryonoff! 🎉
+* Increase stability of the integration tests; removed subscription integration test since its functionality is now covered by sync operation test.
+* Upgraded SQLite.swift to 0.11.5, which fixes compiler warnings when compiling AWSAppSync in Xcode. Thanks @larryonoff! 🎉
+* **Breaking API Changes**
+  * `SyncConfiguration`:
+    - The type changed from a `class` to a `struct`
+    - The initializer parameter is now optional, and the previous `defaultSyncConfiguration` method has been removed. Create a default configuration by invoking the initializer with no arguments, `SyncConfiguration()`
+
+## 2.7.0
+
+### New Features
+
+* Added support for Delta Sync Feature
+    Delta Sync allows you to perform automatic synchronization with an AWS AppSync GraphQL server. The client will perform reconnection, exponential backoff, and retries when network errors take place for simplified data replication to devices. For more details, please refer [documentation.](https://aws-amplify.github.io/docs/ios/api)
+
+### Bug Fixes
+
+* Fixed issue where if a timeout error occurred due to lack of network availability, the callback would not be given back to the developer. [See issue #91](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/91)
+
+### Misc. Updates
+
+* Officially convert project to Swift 4.2. Previously, the project used some Swift 4.2 idioms even though the `SWIFT_VERSION` was officially set to 3. This change makes the support explicit in the project files and README.
+* Updated SwiftReachability dependency to 4.3.0. (See PR #84)[https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/84] Thanks @larryonoff! 🎉
+* Replaced generic struct based AWSAppSyncClientError by a typed enum. (See PR #35)[https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/35] Thanks @MarioBajr! 🎉
+
+## 2.6.24
+
+### Misc. Updates
+
+* `AWSAppSync` now depends on `AWSCore` version `2.7.x` instead of `2.6.x`.
+
+## 2.6.23
+
+### Bug Fixes
+
+* Resolved retain cycles in AWSAppSyncClient which allow the instance to be deallocated. [See PR#88](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/88) Thanks @ifabijanovic 🎉
+* Resolved retain cycle in underlying MQTT client. [Source](https://github.com/aws/aws-sdk-ios/pull/1037)
+
 ## 2.6.22
 
 ### Enhancements

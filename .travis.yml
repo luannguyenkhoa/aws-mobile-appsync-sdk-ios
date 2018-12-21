@@ -24,9 +24,10 @@ deploy:
   file: "$FRAMEWORK_NAME.framework.zip"
   skip_cleanup: true
   on:
-    repo: awslabs/aws-mobile-appsync-sdk-ios
-    tags: true
+   repo: awslabs/aws-mobile-appsync-sdk-ios
+   tags: true
 - provider: script
   script: bash cocoapods_release.sh
   on:
+    repo: awslabs/aws-mobile-appsync-sdk-ios
     tags: true

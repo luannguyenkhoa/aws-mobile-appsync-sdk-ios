@@ -5,9 +5,9 @@ target 'AWSAppSync' do
   use_frameworks!
 
   # Pods for AWSAppSync
-  pod 'AWSCore', '~> 2.6.6'
-  pod 'SQLite.swift', '0.11.4'
-  pod 'ReachabilitySwift', '~> 4.0.0'
+  pod 'AWSCore', '~> 2.7.0'
+  pod 'SQLite.swift', '0.11.5'
+  pod 'ReachabilitySwift', '~> 4.3.0'
 
 
   target 'ApolloTests' do

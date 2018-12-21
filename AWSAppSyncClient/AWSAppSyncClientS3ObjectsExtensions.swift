@@ -24,7 +24,7 @@ extension AWSAppSyncClient {
     func performMutationWithS3Object(data: Data, s3Object: InternalS3ObjectDetails, dispatchGroup: DispatchGroup, resultHandler: ((JSONObject?, Error?) -> Void)?) {
 
         self.s3ObjectManager!.upload(s3Object: s3Object) { (isSuccessful, error) in
-            if (isSuccessful) {
+            if isSuccessful {
                 self.httpTransport?.send(data: data) { (result, error) in
                 }
             } else {

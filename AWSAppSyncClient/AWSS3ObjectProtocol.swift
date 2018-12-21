@@ -25,4 +25,3 @@ public protocol AWSS3ObjectManager {
     func download(s3Object: AWSS3ObjectProtocol, toURL: URL, completion: @escaping ((_ success: Bool, _ eror: Error?) -> Void))
     func uploadFiles(s3Objects: [AWSS3ObjectProtocol & AWSS3InputObjectProtocol], completion: @escaping ((_ success: Bool, _ error: Error?) -> Void))
 }
-

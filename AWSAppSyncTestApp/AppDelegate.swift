@@ -3,7 +3,7 @@
 //  AWSAppSyncTestApp
 //
 //  Created by Dubal, Rohan on 9/11/18.
-//  Copyright © 2018 Dubal, Rohan. All rights reserved.
+//  Copyright © 2018 Amazon Web Services. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
