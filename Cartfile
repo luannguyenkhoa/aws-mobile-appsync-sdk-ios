@@ -1,4 +1,4 @@
-git "git@github.com:luannguyenkhoa/aws-sdk-ios.git"
+git "git@github.com:luannguyenkhoa/aws-sdk-ios.git" "master"
 github "stephencelis/SQLite.swift" ~> 0.12.2
 github "ashleymills/Reachability.swift" ~> 5.0.0
 github "daltoniam/starscream" ~> 3.0.2
