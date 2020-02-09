@@ -263,7 +263,7 @@ class MutationExecutor: NetworkConnectionNotification {
         
         dispatchGroup.enter()
         if let s3Objects = mutation.s3ObjectInput {
-            self.appSyncClient.s3ObjectManager?.uploadFiles(s3Objects: s3Objects){ (isSuccessful, error) in
+            self.appSyncClient.s3ObjectManager?.uploadFiles(s3Objects: s3Objects) { (isSuccessful, error) in
                 if (isSuccessful) {
                     sendDataRequest(mutation: mutation)
                 } else {
